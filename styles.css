@@ -4,7 +4,6 @@
     --accent: #00ff9d;
     --text: #e0e0e0;
 }
-
 body {
     font-family: 'DM Sans', sans-serif;
     background: var(--dark-bg);
