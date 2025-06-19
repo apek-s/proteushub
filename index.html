@@ -53,9 +53,23 @@
     </section>
 
     <script>
-        // GSAP animations
-        gsap.from(".hero h1", { opacity: 0, y: 50, duration: 1 });
-        gsap.from(".hero p", { opacity: 0, y: 50, duration: 1, delay: 0.3 });
-    </script>
-</body>
-</html>
+        <script>
+    // GSAP animations - modified to persist after animation
+    gsap.from(".hero h1", { 
+        opacity: 0, 
+        y: 50, 
+        duration: 1,
+        onComplete: function() {
+            gsap.set(".hero h1", { opacity: 1 }); // Ensure it stays visible
+        }
+    });
+    gsap.from(".hero p", { 
+        opacity: 0, 
+        y: 50, 
+        duration: 1, 
+        delay: 0.3,
+        onComplete: function() {
+            gsap.set(".hero p", { opacity: 1 }); // Ensure it stays visible
+        }
+    });
+</script>
