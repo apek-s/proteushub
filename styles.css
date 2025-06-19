@@ -2,7 +2,7 @@
     --dark-bg: #0f0c29;
     --accent: #00ff9d;
     --text: #e0e0e0;
-    --bg-light: #1f1b3a;
+    --bg-light: #1c1c3c;
 }
 
 body {
@@ -15,24 +15,23 @@ body {
 
 header {
     background: var(--bg-light);
-    padding: 10px 20px;
+    padding: 15px 20px;
 }
 
 nav {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 }
 
 .logo {
     font-size: 24px;
-    font-weight: bold;
     color: var(--accent);
     text-decoration: none;
 }
 
 .nav-links a {
-    margin-left: 15px;
+    margin-left: 20px;
     text-decoration: none;
     color: var(--text);
 }
@@ -40,13 +39,12 @@ nav {
 .nav-links a:hover,
 .nav-links .active {
     color: var(--accent);
-    text-decoration: underline;
 }
 
 .hero {
     padding: 80px 20px;
     text-align: center;
-    background: #1c1c3c;
+    background: #1a1836;
 }
 
 .hero h1 {
@@ -60,7 +58,12 @@ nav {
 }
 
 .featured {
-    padding: 40px 20px;
+    padding: 60px 20px;
+}
+
+.featured h2 {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .simulation-grid {
@@ -72,8 +75,9 @@ nav {
 .simulation-card {
     background: var(--bg-light);
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     transition: transform 0.4s;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 .simulation-card:hover {
@@ -81,17 +85,18 @@ nav {
 }
 
 .cta-button {
-    background: transparent;
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    padding: 10px 16px;
     display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid var(--accent);
+    color: var(--accent);
     text-decoration: none;
     font-weight: bold;
-    transition: box-shadow 0.3s;
-    border-radius: 6px;
+    border-radius: 8px;
+    background: transparent;
+    transition: box-shadow 0.3s, background-color 0.3s;
 }
 
 .cta-button:hover {
-    box-shadow: 0 0 15px var(--accent);
+    box-shadow: 0 0 12px var(--accent);
+    background-color: rgba(0, 255, 157, 0.1);
 }
