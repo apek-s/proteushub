@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <title>Proteus Hub | Marketplace</title>
     <link rel="stylesheet" href="/proteushub/styles.css">
@@ -23,21 +23,64 @@
     <section class="marketplace">
         <h1>Simulation Marketplace</h1>
         <div class="filters">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">Arduino</button>
-            <button class="filter-btn">Power Systems</button>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="arduino">Arduino</button>
+            <button class="filter-btn" data-filter="power">Power Systems</button>
         </div>
         
         <div class="simulation-grid">
-            <!-- Example Card -->
-            <div class="simulation-card">
+            <!-- Arduino Card -->
+            <div class="simulation-card" data-category="arduino">
                 <div class="card-image" style="background: url('https://via.placeholder.com/400x200')"></div>
-                <h3>Smart Energy Meter</h3>
-                <p>Proteus simulation for IoT-based energy monitoring.</p>
+                <h3>Arduino Smart Energy Meter</h3>
+                <p>Proteus simulation for IoT-based energy monitoring with Arduino.</p>
                 <a href="#" class="cta-button">Request Quote</a>
             </div>
-            <!-- Add 5+ more cards -->
+            
+            <!-- Power Systems Card -->
+            <div class="simulation-card" data-category="power">
+                <div class="card-image" style="background: url('https://via.placeholder.com/400x200')"></div>
+                <h3>Power Grid Analysis</h3>
+                <p>Complete power system simulation with fault analysis.</p>
+                <a href="#" class="cta-button">Request Quote</a>
+            </div>
+            
+            <!-- Mixed Card -->
+            <div class="simulation-card" data-category="arduino">
+                <div class="card-image" style="background: url('https://via.placeholder.com/400x200')"></div>
+                <h3>Arduino Home Automation</h3>
+                <p>Smart home system simulation with sensors and relays.</p>
+                <a href="#" class="cta-button">Request Quote</a>
+            </div>
+            
+            <!-- Add more cards as needed -->
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const simulationCards = document.querySelectorAll('.simulation-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active state
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filter = button.dataset.filter;
+                    
+                    // Filter cards
+                    simulationCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
