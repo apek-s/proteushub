@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteus Hub | Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">PROTEUS<span>HUB</span></a>
+            <div class="nav-links">
+                <a href="marketplace.html">Marketplace</a>
+                <a href="submit.html">Submit Design</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Trade Premium Proteus Simulations</h1>
+            <p>Join our network of engineers. Share or acquire high-quality .pds files.</p>
+            <a href="submit.html" class="cta-button">Get Funded →</a>
+        </div>
+    </section>
+
+    <!-- Featured Simulations -->
+    <section class="featured">
+        <h2>Recently Added</h2>
+        <div class="simulation-grid">
+            <!-- Card 1 -->
+            <div class="simulation-card">
+                <h3>Industrial IoT Dashboard</h3>
+                <p>Real-time monitoring system with ESP32 and sensors.</p>
+                <a href="marketplace.html" class="cta-button">View Details</a>
+            </div>
+            <!-- Card 2 -->
+            <div class="simulation-card">
+                <h3>Autonomous Robot</h3>
+                <p>Obstacle-avoiding robot with pathfinding.</p>
+                <a href="marketplace.html" class="cta-button">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // GSAP animations
+        gsap.from(".hero h1", { opacity: 0, y: 50, duration: 1 });
+        gsap.from(".hero p", { opacity: 0, y: 50, duration: 1, delay: 0.3 });
+    </script>
+</body>
+</html>
