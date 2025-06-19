@@ -349,3 +349,25 @@ nav {
         font-size: 2rem;
     }
 }
+
+/* ===== HERO ANIMATION INITIAL STATES ===== */
+/* Add these styles at the end of your existing CSS */
+
+.hero h1,
+.hero p,
+.hero .cta-button {
+    /* Initial hidden state for GSAP animation */
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Remove any conflicting animations */
+.hero h1 {
+    animation: none !important;
+    -webkit-animation: none !important;
+}
+
+.hero p {
+    animation: none !important;
+    -webkit-animation: none !important;
+}
